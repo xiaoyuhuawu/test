@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+	<button value="0" id="app">appendChild</button>
+	<button value="1" id="inne">innerHTML</button>
+
+	<script>
+		let oApp = document.getElementById( 'app' ),
+			oInne = document.getElementById( 'inne' )
+
+		oApp.onclick = function a() {
+			var oInp = document.createElement( 'input' )
+			var obj = {
+				type: 'button',
+				id: 'btn',
+				value: '按钮'
+			}
+			for (var i in obj) oInp.setAttribute( i, obj[i] )
+			document.body.appendChild( oInp )
+		}
+
+		oInne.onclick = function b() {
+			let oDiv = document.createElement( 'div' )
+			document.body.appendChild( oDiv ).innerHTML = "<input type='button' id='btn' value='按钮'/>"
+		}
+
+	</script>
+ </body>
+</html>
